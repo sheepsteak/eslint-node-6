@@ -1,0 +1,28 @@
+{
+    "name": "eslint-node-6",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "compile:es5": "BABEL_ENV=es5 babel -d lib src",
+        "compile:es2015": "BABEL_ENV=es2015 babel -d lib src",
+        "start:es5": "npm run compile:es5 && echo 'ES5' && node lib/index.js",
+        "start:es2015": "npm run compile:es2015 && echo '\nES2015' && node --harmony-function-name lib/index.js",
+        "start": "npm run start:es5 && npm run start:es2015",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-cli": "^6.10.1",
+        "babel-preset-es2015": "^6.9.0",
+        "babel-preset-es2015-node6": "^0.2.0",
+        "babel-preset-react": "^6.11.1"
+    },
+    "dependencies": {
+        "react": "^15.2.0"
+    },
+    "engines": {
+        "node": ">=6.1.0"
+    }
+}
